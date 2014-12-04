@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS `waypoints`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `waypoints` (
-  `GUID` int(10) unsigned DEFAULT NULL,
-  `CreatureSpawnGUID` int(10) unsigned DEFAULT NULL,
-  `GameObjectSpawnGUID` int(10) unsigned DEFAULT NULL,
-  `X` smallint(5) unsigned DEFAULT NULL,
-  `Y` smallint(5) unsigned DEFAULT NULL,
-  `Z` smallint(5) unsigned DEFAULT NULL,
+  `GUID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `CreatureSpawnGUID` int(10) unsigned NOT NULL,
+  `GameObjectSpawnGUID` int(10) unsigned NOT NULL,
+  `X` smallint(5) unsigned NOT NULL,
+  `Y` smallint(5) unsigned NOT NULL,
+  `Z` smallint(5) unsigned NOT NULL,
   `O` smallint(5) unsigned DEFAULT NULL,
   `EmoteOnStart` tinyint(3) unsigned DEFAULT NULL,
   `EmoteOnEnd` tinyint(3) unsigned DEFAULT NULL,
@@ -39,8 +39,8 @@ CREATE TABLE `waypoints` (
   `TextOnEnd` text,
   `NextWaypointGUID` int(10) unsigned DEFAULT NULL,
   `waypoints_ID` varchar(255) NOT NULL,
-  `Speed` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`waypoints_ID`)
+  `Speed` smallint(5) unsigned NOT NULL,
+  PRIMARY KEY (`GUID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
